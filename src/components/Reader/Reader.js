@@ -21,44 +21,40 @@ export default class Reader extends Component {
   static propTypes = {};
 
   handlePrev = evt => {
-    if (this.state.currentPage <= 1) {
+    if (this.state.currentPage === 1) {
       this.setState(prevState => {
         return {
           disabledPrev: (prevState.disabledPrev = true)
         };
       });
-      console.log(this.state.disabled);
     } else {
       this.setState(prevState => {
         return {
           disabledPrev: false,
           disabledNext: false,
-          currentArticle: this.state.currentArticle - 1,
-          currentPage: this.state.currentPage - 1
+          currentArticle: prevState.currentArticle - 1,
+          currentPage: prevState.currentPage - 1
         };
       });
-      console.log(this.state.disabled);
     }
   };
 
   handleNext = evt => {
-    if (this.state.currentPage >= this.props.publications.length) {
+    if (this.state.currentPage === this.props.publications.length) {
       this.setState(prevState => {
         return {
           disabled: (prevState.disabledNext = true)
         };
       });
-      console.log(this.state.disabledNext, this.state.currentPage);
     } else {
       this.setState(prevState => {
         return {
           disabledNext: false,
           disabledPrev: false,
-          currentArticle: this.state.currentArticle + 1,
-          currentPage: this.state.currentPage + 1
+          currentArticle: prevState.currentArticle + 1,
+          currentPage: prevState.currentPage + 1
         };
       });
-      console.log(this.state.disabled, this.state.currentPage);
     }
   };
 

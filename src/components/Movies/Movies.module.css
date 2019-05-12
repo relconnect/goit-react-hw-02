@@ -1,0 +1,63 @@
+.container {
+  max-width: 1200px;
+  min-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.input {
+  color: #171718;
+  font-size: 16px;
+  min-height: 38px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgb(179, 179, 179);
+  width: 100%;
+  outline: 0;
+  transition: border-color 200ms ease-in-out;
+}
+
+.input:focus {
+  border-width: 2px;
+  border-color: rgb(38, 132, 255);
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.movie-card {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background-color: #fff;
+  flex: 0 0 calc(25% - 16px);
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.movie-card .content {
+  padding: 8px;
+}
+
+.movie-card img {
+  display: block;
+  max-width: 100%;
+}
+
+.movie-card h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.movie-card p {
+  margin-bottom: 0;
+  line-height: 1.5;
+}

@@ -84,7 +84,6 @@ export default class Reader extends Component {
   };
 
   render() {
-    console.log(this.state.currentPage);
     return (
       <div className={styles["reader"]} key={this.props.id}>
         <Publication {...this.props.publications[this.state.currentPage - 1]} />

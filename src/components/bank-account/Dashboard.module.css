@@ -1,0 +1,81 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.controls {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #062c56;
+}
+
+.input {
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  width: 260px;
+  height: 40px;
+  border: unset;
+  font-size: 16px;
+  font-family: "Roboto";
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+.btn {
+  border-radius: 3px;
+  background-color: rgb(56, 132, 255);
+  width: 187px;
+  height: 40px;
+  border: unset;
+  margin-left: 20px;
+  font-size: 16px;
+  font-family: "Roboto";
+  color: rgb(242, 239, 236);
+  font-weight: bold;
+}
+.balance {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+.balance-text {
+  font-size: 16px;
+  font-family: "Roboto";
+  color: rgb(92, 105, 117);
+  font-weight: bold;
+  margin-left: 30px;
+}
+.history {
+  width: 60%;
+  border-collapse: collapse;
+  border: 1px solid rgb(235, 238, 242);
+  text-align: center;
+  font-size: 16px;
+  font-family: "Roboto";
+  color: rgb(92, 105, 117);
+}
+
+.history-title {
+  font-size: 13px;
+  font-family: "HelveticaNeueCyr";
+  color: rgb(39, 39, 39);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.table-head {
+  background-color: rgb(235, 238, 242);
+  height: 68px;
+}
+.table-head tr {
+  height: 68px;
+  text-align: center;
+}
+
+tbody td {
+  padding: 20px;
+  border-bottom: 1px solid rgb(235, 238, 242);
+}

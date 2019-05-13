@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import Publication from "./Publication";
-import Counter from "./Counter";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Publication from './Publication';
+import Counter from './Counter';
 // import Control from "./Control";
-import styles from "./Reader.module.css";
+import styles from './Reader.module.css';
 
 export default class Reader extends Component {
   //   static defaultProps = {
@@ -57,45 +58,53 @@ export default class Reader extends Component {
   //     }
   //   };
   state = {
-    currentPage: 1
+    currentPage: 1,
   };
 
-  handlePrev = evt => {
-    if (this.state.currentPage <= 1) {
-      return;
-    } else {
-      this.setState(state => {
-        return {
-          currentPage: state.currentPage - 1
-        };
-      });
-    }
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    publications: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
   };
-  handleNext = evt => {
-    if (this.state.currentPage >= this.props.publications.length) {
-      return;
-    } else {
-      this.setState(state => {
-        return {
-          currentPage: state.currentPage + 1
-        };
-      });
-    }
+
+  handlePrev = () => {
+    if (this.state.currentPage <= 1) return;
+
+    this.setState(state => {
+      return {
+        currentPage: state.currentPage - 1,
+      };
+    });
+  };
+
+  handleNext = () => {
+    if (this.state.currentPage >= this.props.publications.length) return;
+
+    this.setState(state => {
+      return {
+        currentPage: state.currentPage + 1,
+      };
+    });
   };
 
   render() {
     return (
-      <div className={styles["reader"]} key={this.props.id}>
+      <div className={styles.reader} key={this.props.id}>
         <Publication {...this.props.publications[this.state.currentPage - 1]} />
         <Counter
           page={this.state.currentPage}
           quantity={this.props.publications.length}
         />
-        <section className={styles["controls"]}>
+        <section className={styles.controls}>
           <button
             type="button"
             onClick={this.handlePrev}
-            className={styles["button"]}
+            className={styles.button}
             disabled={this.state.currentPage <= 1}
           >
             Назад
@@ -103,7 +112,7 @@ export default class Reader extends Component {
           <button
             type="button"
             onClick={this.handleNext}
-            className={styles["button"]}
+            className={styles.button}
             disabled={this.state.currentPage >= this.props.publications.length}
           >
             Вперед
